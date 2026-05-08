@@ -1,59 +1,48 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Course } from "@/types/course";
 
-interface CourseCardProps {
-  course: Course;
-}
-
-export function CourseCard({ course }: CourseCardProps) {
+export function CourseCard({
+  title,
+  description,
+  duration,
+  price,
+  image,
+  active,
+}: any) {
   return (
-    <div className="group relative bg-[#0D1117] border border-white/10 rounded-2xl overflow-hidden transition-all hover:border-[#00D4AA]/50">
-      {/* Course Image */}
-      <div className="relative h-48 w-full overflow-hidden">
-        <Image
-          src={course.image}
-          alt={course.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-        {course.isActive && (
-          <span className="absolute top-4 right-4 bg-[#00D4AA] text-[#080C0F] text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-tighter">
+    <div className="bg-[#0D1117] border border-white/5 rounded-3xl overflow-hidden flex flex-col group transition-all hover:border-[#00D4AA]/40">
+      <div className="relative h-52 w-full">
+        <Image src={image} alt={title} fill className="object-cover" />
+        {active && (
+          <div className="absolute top-4 right-4 bg-[#00D4AA] text-[#080C0F] text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest">
             ● AI Active
-          </span>
+          </div>
         )}
       </div>
 
-      {/* Content */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#00D4AA] transition-colors">
-          {course.title}
+      <div className="p-8 flex flex-col flex-1">
+        <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#00E5FF] transition-colors">
+          {title}
         </h3>
-        <p className="text-white/60 text-sm leading-relaxed mb-6 line-clamp-3">
-          {course.description}
+        <p className="text-white/60 text-sm leading-relaxed mb-8 flex-1">
+          {description}
         </p>
 
-        {/* Meta Info */}
-        <div className="flex items-center gap-6 mb-6 text-[10px] font-bold text-white/40 uppercase tracking-widest">
-          <div className="flex items-center gap-2">
-            <span className="text-[#00D4AA]">⊙</span> {course.duration}
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-[#00D4AA]">◘</span> {course.price}
-          </div>
+        <div className="flex items-center gap-6 mb-8">
+          <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-2">
+            <span className="text-[#00D4AA] text-lg">⊙</span> {duration}
+          </span>
+          <span className="text-[10px] font-black text-white/40 uppercase tracking-[0.2em] flex items-center gap-2">
+            <span className="text-[#00D4AA] text-lg">◘</span> {price}
+          </span>
         </div>
 
-        {/* Actions */}
-        <div className="flex gap-3">
-          <button className="flex-1 bg-[#00E5FF] hover:bg-[#00D4AA] text-[#080C0F] font-bold py-2 px-4 rounded-lg text-xs transition-colors uppercase">
+        <div className="flex gap-4">
+          <button className="flex-1 bg-[#00E5FF] hover:bg-[#00D4AA] text-[#080C0F] font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition-all">
             Enroll Now
           </button>
-          <Link
-            href={`/courses/${course.slug}`}
-            className="flex-1 border border-[#00D4AA]/30 hover:border-[#00D4AA] text-[#00D4AA] font-bold py-2 px-4 rounded-lg text-xs text-center transition-all uppercase"
-          >
+          <button className="flex-1 border border-[#00D4AA]/30 hover:border-[#00D4AA] text-[#00D4AA] font-bold py-3 rounded-xl text-xs uppercase tracking-widest transition-all">
             Details
-          </Link>
+          </button>
         </div>
       </div>
     </div>

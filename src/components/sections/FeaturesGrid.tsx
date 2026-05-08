@@ -7,27 +7,27 @@ const FEATURES = [
     description:
       "Specialized curriculum in Deep Learning and Neural Architecture.",
     icon: <Monitor className="w-5 h-5 text-[#00E5FF]" />,
-    image: "/images/courses-preview.jpg", // Replace with your grayscale assets
+    image: "/images/course-preview.png", // Replace with your grayscale assets
   },
   {
     title: "Research",
     description:
       "Pushing the boundaries of generative AI and robotic process automation.",
     icon: <Cpu className="w-5 h-5 text-[#00D4AA]" />,
-    image: "/images/research-preview.jpg",
+    image: "/images/research-preview.png",
   },
   {
     title: "Students",
     description:
       "A community of elite engineers and data scientists from across the globe.",
     icon: <Users className="w-5 h-5 text-[#00E5FF]" />,
-    image: "/images/students-preview.jpg",
+    image: "/images/students-preview.png",
   },
   {
     title: "Contact",
     description: "Connect with our labs across major African tech hubs.",
     icon: <MapPin className="w-5 h-5 text-[#00D4AA]" />,
-    image: "/images/contact-preview.jpg",
+    image: "/images/contact-preview.png",
   },
 ];
 
@@ -40,13 +40,22 @@ export default function FeaturesGrid() {
             <div
               key={f.title}
               className="group relative bg-[#0D1117] border border-white/5 p-6 rounded-xl hover:border-[#00D4AA]/30 transition-all duration-300"
+              style={{ padding: "24px" }}
             >
-              <div className="w-10 h-10 rounded-lg bg-[#00D4AA]/10 flex items-center justify-center mb-6">
+              <div
+                className="w-10 h-10 rounded-lg bg-[#00D4AA]/10 flex items-center justify-center mb-6"
+                style={{ marginBottom: "10px" }}
+              >
                 {f.icon}
               </div>
               <div className="relative h-32 w-full mb-6 overflow-hidden rounded-lg grayscale group-hover:grayscale-0 transition-all duration-500">
                 <div className="absolute inset-0 bg-linear-to-t from-[#0D1117] to-transparent z-10" />
-                <div className="bg-zinc-800 w-full h-full animate-pulse" />{" "}
+                <Image
+                  src={f.image}
+                  alt={`AI Concept ${f.title}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
                 {/* Placeholder */}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">{f.title}</h3>

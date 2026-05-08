@@ -5,12 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Globe, Bell } from "lucide-react";
 import { cn } from "@/utils/cn";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { label: "Courses", href: "/courses" },
   { label: "Research", href: "/research" },
-  { label: "Students", href: "/students" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
+  { label: "Blog/News", href: "/blog" },
 ];
 
 export default function Navbar() {
@@ -22,10 +24,21 @@ export default function Navbar() {
       <nav className="max-w-360 mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="text-[#00D4AA] text-[18px] font-black tracking-tighter uppercase italic">
+          <Link
+            href="/"
+            className="flex items-center "
+            style={{ paddingLeft: "1rem" }}
+          >
+            {/* <span className="text-[#00D4AA] text-[18px] font-black tracking-tighter uppercase italic">
               Techatrax
-            </span>
+            </span> */}
+            <Image
+              src={"/images/logo-techA.png"}
+              alt="techatrax-logo"
+              width={150}
+              height={150}
+              className=""
+            />
           </Link>
 
           {/* Centered Desktop Nav */}
