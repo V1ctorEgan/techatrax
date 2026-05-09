@@ -71,7 +71,7 @@ export default function Navbar() {
             <Bell className="w-4 h-4 text-white/60 cursor-pointer hover:text-white" />
             <div className="flex items-center justify-center min-w-30 h-9 bg-[#00E5FF] rounded-xs hover:bg-[#00D4AA] transition-all uppercase shadow-[0_0_15px_rgba(0,229,255,0.4)] mr-2">
               <Link
-                href="/portal"
+                href="/login"
                 className="font-bold w-full h-full flex items-center justify-center px-6 mx-1 text-[10px]  text-[#141516]  whitespace-nowrap"
               >
                 Portal Access
