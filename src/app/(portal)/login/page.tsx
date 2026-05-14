@@ -70,7 +70,7 @@ export default function AuthPage() {
       return;
     }
 
-    router.push("/portal/dashboard");
+    router.push("/dashboard");
   };
 
   const handleSignup = async (e: React.FormEvent) => {
@@ -103,7 +103,7 @@ export default function AuthPage() {
           phone: phone.trim(),
           specialization,
         },
-        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/portal/verified`,
+        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/verified`,
       },
     });
 
@@ -113,7 +113,7 @@ export default function AuthPage() {
       return;
     }
 
-    router.push("/portal/verify");
+    router.push("/verify");
   };
 
   const switchView = (v: View) => {
@@ -358,7 +358,7 @@ export default function AuthPage() {
                   </label>
                   {view === "login" && (
                     <span
-                      onClick={() => router.push("/portal/forgot-password")}
+                      onClick={() => router.push("/forgot-password")}
                       className="text-[9px] text-white/30 hover:text-[#00E5FF] cursor-pointer transition-colors"
                     >
                       Forgot Password?

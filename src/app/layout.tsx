@@ -52,9 +52,9 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="bg-[#080C0F] text-white antialiased">
-        <Navbar />
+        {/* <Navbar /> */}
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

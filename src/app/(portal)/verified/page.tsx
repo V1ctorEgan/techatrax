@@ -21,7 +21,7 @@ export default function NeuralIdentityVerified() {
 
       // If no session, send back to login
       if (!session) {
-        router.push("/portal/login");
+        router.push("/login");
         return;
       }
     };
@@ -40,7 +40,7 @@ export default function NeuralIdentityVerified() {
 
     // Redirect to dashboard after 3 seconds
     const redirectTimer = setTimeout(() => {
-      router.push("/portal/dashboard");
+      router.push("/dashboard");
     }, 3000);
 
     return () => {

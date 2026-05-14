@@ -26,7 +26,15 @@ const socialItems = [
 export default function Footer() {
   return (
     <footer className="bg-[#080C0F] border-t border-[rgba(0,212,170,0.08)]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+      <div
+        className="max-w-7xl mx-auto px-6 lg:px-8 py-16"
+        style={{
+          paddingLeft: "1.5rem",
+          paddingRight: "1.5rem",
+          paddingTop: "4rem",
+          paddingBottom: "4rem",
+        }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand column */}
           <div className="lg:col-span-2 space-y-4">
@@ -48,7 +56,10 @@ export default function Footer() {
             </p>
 
             {/* Social icons */}
-            <div className="flex items-center gap-3 pt-2">
+            <div
+              className="flex items-center gap-3 pt-2"
+              style={{ paddingTop: "8px" }}
+            >
               {socialItems.map((item) => (
                 <a
                   key={item.platform}
@@ -93,12 +104,15 @@ export default function Footer() {
         {/* END grid */}
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.05)] flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div
+          className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.05)] flex flex-col sm:flex-row items-center justify-between gap-4"
+          style={{ marginTop: "4rem", paddingTop: "2rem" }}
+        >
           <p
             className="text-xs text-white/25 tracking-widest uppercase"
             style={{ fontFamily: "var(--font-mono)" }}
           >
-            © 2025 Techatrax AI Institute. Engineered for the digital frontier.
+            © 2026 Techatrax Global. Engineered for the digital frontier.
           </p>
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00D4AA] animate-pulse" />

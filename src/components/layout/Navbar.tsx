@@ -82,7 +82,8 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
+            className="md:hidden text-white "
+            style={{ marginRight: "15px" }}
           >
             {isOpen ? <X /> : <Menu />}
           </button>
@@ -91,7 +92,10 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-[#080C0F] p-6 flex flex-col gap-4 border-t border-white/10">
+        <div
+          className="md:hidden bg-[#080C0F] p-6 flex flex-col gap-4 border-t border-white/10"
+          style={{ padding: "1.5rem" }}
+        >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}

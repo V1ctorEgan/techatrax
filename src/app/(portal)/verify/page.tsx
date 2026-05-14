@@ -34,7 +34,7 @@ export default function VerifyNeuralIdentity() {
       } = await supabase.auth.getUser();
       if (user?.email_confirmed_at) {
         clearInterval(interval);
-        router.push("/portal/verified");
+        router.push("/verified");
       }
     }, 3000);
 
@@ -56,7 +56,7 @@ export default function VerifyNeuralIdentity() {
       type: "signup",
       email,
       options: {
-        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/portal/verified`,
+        emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/verified`,
       },
     });
 
@@ -72,11 +72,11 @@ export default function VerifyNeuralIdentity() {
   };
 
   const handleChangeEmail = () => {
-    router.push("/portal/login");
+    router.push("/login");
   };
 
   const handleBack = () => {
-    router.push("/portal/login");
+    router.push("/login");
   };
 
   return (
